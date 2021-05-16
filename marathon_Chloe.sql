@@ -294,7 +294,9 @@ insert into coureur (CO_NOM, CO_PRENOM, CO_NAISSANCE, CO_SEXE)
 values ('Mandelbrot', 'Benoit', '1924-11-24', 1);
 
 -- 4
-
+update inscription
+set IN_TEMP_EFFECTUE = dateadd(minute, -1, IN_TEMP_EFFECTUE)
+where IN_EPREUVE_FK = 3 and IN_DATE regexp '^(2015)';
 
 -- 5 
 delete from inscription
